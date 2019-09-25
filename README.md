@@ -5,4 +5,32 @@
 Extension modules to Redis' native data types and commands
 
 
+
+
+# Commands
+
+## XR.PREPEND key value
+If key already exists and is a string, this command prepend the value at the begin of the string. If key does not exist it is created and set as an empty string, so PREPEND will be similar to SET in this special case.
+
+### Return value
+[Integer reply](https://redis.io/topics/protocol#integer-reply): the length of the string after the prepend operation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Based on https://github.com/RedisLabsModules/redex
