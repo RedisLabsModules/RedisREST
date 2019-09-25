@@ -9,7 +9,6 @@ crate-type = ["cdylib"]
 [dependencies]
 
 [dependencies.redismodule]
-# git = "https://github.com/redislabsmodules/redismodule-rs.git"
-# branch = "safe_context_rm_call"
-path = "../redismodule-rs"
+git = "https://github.com/redislabsmodules/redismodule-rs.git"
+branch = "safe_context_rm_call"
 features = ["experimental-api"]
