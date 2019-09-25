@@ -1,0 +1,15 @@
+[package]
+name = "redisx"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+
+[dependencies.redismodule]
+# git = "https://github.com/redislabsmodules/redismodule-rs.git"
+# branch = "safe_context_rm_call"
+path = "../redismodule-rs"
+features = ["experimental-api"]
