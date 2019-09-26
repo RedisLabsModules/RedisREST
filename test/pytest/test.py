@@ -21,11 +21,23 @@ class RedisXTestCase(BaseModuleTestCase):
     def assertExists(self, r, key, msg=None):
         self.assertTrue(r.exists(key), msg)
 
-    def testSetRootWithInvalidJSONValuesShouldFail(self):
-        """Test that """
+    def testPrepend(self):
+        """Test X.PREPEND """
         with self.redis() as r:
             r.client_setname(self._testMethodName)
             r.flushdb()
-           
+
+            with self.assertRaises(redis.exceptions.ResponseError):
+                r.execute_command('x.prepend', 'key')
+
+            with self.assertRaises(redis.exceptions.ResponseError):
+                r.execute_command('x.prepend', 'key', 'abc', 'dfc')
+
+            self.assertEquals(3, r.execute_command('x.prepend', 'key1', 'abc'))
+            self.assertEquals('abc', r.get('key1'))
+
+            self.assertEquals(6, r.execute_command('x.prepend', 'key1', 'def'))
+            self.assertEquals('defabc', r.get('key1'))
+
 if __name__ == '__main__':
     unittest.main()
