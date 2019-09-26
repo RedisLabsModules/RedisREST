@@ -9,7 +9,7 @@ Extension modules to Redis' native data types and commands
 
 # Commands
 
-## RX.PREPEND key value
+## X.PREPEND key value
 If key already exists and is a string, this command prepend the value at the begin of the string. If key does not exist it is created and set as an empty string, so PREPEND will be similar to SET in this special case.
 
 ### Return value
