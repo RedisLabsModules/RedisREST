@@ -11,6 +11,11 @@ use std::usize;
 /// X.PREPEND <key> <value>
 ///
 fn prepend(ctx: &Context, args: Vec<String>) -> RedisResult {
+
+    if args.len() > 3 {
+        return Err(RedisError::WrongArity);
+    }
+
     let mut args = args.into_iter().skip(1);
     let key = args.next_string()?;
     let mut value = args.next_string()?;
@@ -26,13 +31,18 @@ fn prepend(ctx: &Context, args: Vec<String>) -> RedisResult {
 }
 
 ///
-/// X.GETSETEX <key> <seconds> <value>
+/// X.GETSETEX <key> <value> <seconds> 
 ///
 fn getsetex(ctx: &Context, args: Vec<String>) -> RedisResult {
+
+    if args.len() > 4 {
+        return Err(RedisError::WrongArity);
+    }
+
     let mut args = args.into_iter().skip(1);
     let key = args.next_string()?;
-    let seconds = args.next_u64()?;
     let value = args.next_string()?;
+    let seconds = args.next_u64()?;
 
     let redis_key = ctx.open_key_writable(&key);
     let res = if redis_key.is_empty() {
@@ -53,6 +63,10 @@ fn getsetex(ctx: &Context, args: Vec<String>) -> RedisResult {
 /// X.GETEX <key> <seconds>
 ///
 fn getex(ctx: &Context, args: Vec<String>) -> RedisResult {
+    if args.len() > 3 {
+        return Err(RedisError::WrongArity);
+    }
+
     let mut args = args.into_iter().skip(1);
     let key = args.next_string()?;
     let seconds = args.next_u64()?;

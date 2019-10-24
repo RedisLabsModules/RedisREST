@@ -6,7 +6,7 @@ Extension modules to Redis' native data types and commands
 
 # Commands
 
-## X.GETSETEX key seconds value
+## X.GETSETEX key value seconds
 `Time complexity: O(1)`
 
 Atomically sets key to value and returns the old value stored at key
