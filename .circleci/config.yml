@@ -56,11 +56,11 @@ jobs:
              pip install -r ./test/pytest/requirements.txt
              python ./test/pytest/test.py
 
-      - run:
-          name: Package
-          command: |
-            cargo build --all --all-targets --release
-            ramp pack -m ramp.yml -o ./target/release/$PACKAGE_NAME.{os}-{architecture}.$CIRCLE_BRANCH.zip ./target/release/$MODULE_ARTIFACT
+      # - run:
+      #     name: Package
+      #     command: |
+      #       cargo build --all --all-targets --release
+      #       ramp pack -m ramp.yml -o ./target/release/$PACKAGE_NAME.{os}-{architecture}.$CIRCLE_BRANCH.zip ./target/release/$MODULE_ARTIFACT
 
       # - run:
       #     name: Upload Coverage
