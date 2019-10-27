@@ -33,7 +33,7 @@ pub extern "C" fn init(_raw_ctx: *mut rawmod::RedisModuleCtx) -> c_int {
 
 redis_module! {
     name: "redisrest",
-    version: 0.1.0,
+    version: 001000,
     data_types: [],
     init: init,
     commands: [],
