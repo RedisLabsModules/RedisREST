@@ -8,8 +8,9 @@ jobs:
     steps:
       - checkout
       - run: git submodule sync
-      - run: git submodule update --init      
-      
+      - run: git submodule update --init    
+      - run: rustup default nightly
+        
       - run:
           name: Install prerequisite
           command: |
