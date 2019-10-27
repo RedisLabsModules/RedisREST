@@ -1,12 +1,13 @@
 [package]
-name = "redisx"
-version = "0.2.0"
+name = "redisrest"
+version = "0.1.0"
 edition = "2018"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
+rocket = "0.4.2"
 
 [dependencies.redismodule]
 git = "https://github.com/redislabsmodules/redismodule-rs.git"
