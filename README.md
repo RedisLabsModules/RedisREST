@@ -4,3 +4,10 @@
 # RedisREST
 Extension modules to Redis' native data types and commands
 
+
+## Getting started
+
+```bash
+cargo build --release
+redis-server --loadmodule ./target/release/libredisrest.so
+```
