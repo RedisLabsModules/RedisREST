@@ -9,7 +9,7 @@ Extension modules to Redis' native data types and commands
 
 ```bash
 cargo +nightly build --release
-ROCKET_ENV=production redis-server --loadmodule ./target/release/libredisrest.so
+redis-server --loadmodule ./target/release/libredisrest.so
 ```
 
 *Note: Redis REST Module uses [Rocket](https://rocket.rs/) web frameworks that must be build using nightly version of Rust.*
@@ -54,3 +54,12 @@ curl -X GET http://localhost:8000/hgetall/hfoo
 You have the pattern...
 
 Enjoy!
+
+## Configuring Web Server
+
+see: https://rocket.rs/v0.4/guide/configuration/
+
+For example:
+```bash 
+ROCKET_ENV=production ROCKET_PORT=8080 redis-server --loadmodule ./target/release/libredisrest.so
+```
