@@ -9,7 +9,7 @@ Extension modules to Redis' native data types and commands
 
 ```bash
 cargo +nightly build --release
-redis-server --loadmodule ./target/release/libredisrest.so
+ROCKET_ENV=production redis-server --loadmodule ./target/release/libredisrest.so
 ```
 
 *Note: Redis REST Module uses [Rocket](https://rocket.rs/) web frameworks that must be build using nightly version of Rust.*
