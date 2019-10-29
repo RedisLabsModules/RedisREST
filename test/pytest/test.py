@@ -27,9 +27,8 @@ class RedisRESTTestCase(BaseModuleTestCase):
         with self.redis() as r:
             r.client_setname(self._testMethodName)
             r.flushdb()
-
-        requests.get(url = "http://localhost:8000/set/k/v") 
-        self.assertEquals('v', r.execute_command('get', 'k'))
+            requests.get(url = "http://localhost:8000/set/k/v") 
+            self.assertEquals('v', r.execute_command('get', 'k'))
 
 
 if __name__ == '__main__':
