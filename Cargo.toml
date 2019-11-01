@@ -8,8 +8,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 rocket = "0.4.2"
-
-[dependencies.redismodule]
-git = "https://github.com/redislabsmodules/redismodule-rs.git"
-branch = "safe_context_rm_call"
-features = ["experimental-api"]
+redis-module = { version="0.5.0", features = ["experimental-api"]}

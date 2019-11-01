@@ -401,9 +401,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "redismodule"
-version = "0.3.0"
-source = "git+https://github.com/redislabsmodules/redismodule-rs.git?branch=safe_context_rm_call#fee39269d63e17a180099e4229cf8e35b933604f"
+name = "redis-module"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bindgen 0.51.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "bitflags 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -417,7 +417,7 @@ dependencies = [
 name = "redisrest"
 version = "0.1.0"
 dependencies = [
- "redismodule 0.3.0 (git+https://github.com/redislabsmodules/redismodule-rs.git?branch=safe_context_rm_call)",
+ "redis-module 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rocket 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -798,7 +798,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "7a6e920b65c65f10b2ae65c831a81a073a89edd28c7cce89475bff467ab4167a"
 "checksum quote 0.6.13 (registry+https://github.com/rust-lang/crates.io-index)" = "6ce23b6b870e8f94f81fb0a363d65d86675884b34a09043c81e5562f11c1f8e1"
 "checksum quote 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "053a8c8bcc71fcce321828dc897a98ab9760bef03a4fc36693c231e5b3216cfe"
-"checksum redismodule 0.3.0 (git+https://github.com/redislabsmodules/redismodule-rs.git?branch=safe_context_rm_call)" = "<none>"
+"checksum redis-module 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "6ca9c71cbef122d7a418a72f87dcaeb24cf3c2227f5b27c3bc55776c1c31d02a"
 "checksum redox_syscall 0.1.56 (registry+https://github.com/rust-lang/crates.io-index)" = "2439c63f3f6139d1b57529d16bc3b8bb855230c8efcc5d3a896c8bea7c3b1e84"
 "checksum regex 1.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "dc220bd33bdce8f093101afe22a037b8eb0e5af33592e6a9caafff0d4cb81cbd"
 "checksum regex-syntax 0.6.12 (registry+https://github.com/rust-lang/crates.io-index)" = "11a7e20d1cce64ef2fed88b66d347f88bd9babb82845b2b858f3edbf59a4f716"

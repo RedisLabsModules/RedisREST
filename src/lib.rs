@@ -4,11 +4,11 @@
 extern crate rocket;
 
 #[macro_use]
-extern crate redismodule;
+extern crate redis_module;
 
-use redismodule::raw as rawmod;
+use redis_module::raw as rawmod;
 
-use redismodule::{Context, RedisValue};
+use redis_module::{Context, RedisValue};
 use rocket::response::content;
 use rocket::response::status::BadRequest;
 use std::path::PathBuf;
