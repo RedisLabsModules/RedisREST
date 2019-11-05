@@ -76,6 +76,9 @@ fn index() -> content::Html<&'static str> {
                 </script>
             </head>
             <body>
+                <header>
+                    <img alt=\"Redis\" src=\"https://redis.io//images/redis-white.png\">
+                </header>
                 <form onsubmit=\"sendCmd();return false;\">
                     Redis CLI: <input id=\"cli\" style=\"width: 60%;\"> <input type=\"submit\" value=\"Send\">
                 </form>
